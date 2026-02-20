@@ -1,54 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ads UX | Development Sandbox</title>
+    <title>Vrume | Premium Performance Traffic</title>
+    <meta name="description"
+        content="High-quality traffic for serious performance marketers and media buyers. Apply for access.">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="background-mesh"></div>
-    <main class="container">
-        <header>
-            <div class="logo-badge">SYSTEM_ONLINE</div>
-        </header>
-        <section class="hero">
-            <h1 class="glitch-text" data-text="Ads UX">Ads UX</h1>
-            <h2 class="subtitle">Development Environment</h2>
-            <p class="description">
-                The designated workspace for prototyping, component development, and UX experiments.
-                <br>Currently running flawlessly on Vercel.
-            </p>
-            <div class="action-buttons">
-                <button class="primary-btn" id="exploreBtn">
-                    <span>Initialize Workspace</span>
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
-                <div class="status-indicator">
-                    <div class="pulse"></div>
-                    <span>Deployment Active</span>
+    <div class="glow-bg"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">VRUME<span class="dot">.</span></div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Formats</a>
+                <a href="#" class="nav-link">Advertisers</a>
+                <a href="#" class="btn btn-secondary start-quiz-btn">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="app-container">
+        <!-- Home View -->
+        <section id="view-home" class="view active">
+            <div class="hero">
+                <div class="badge">Invite-Only Access</div>
+                <h1 class="headline">Unlock High-Intent Traffic At Scale.</h1>
+                <p class="subheadline">Stop buying bot traffic. Vrume connects serious media buyers with premium
+                    publishers for scalable, high-ROI campaigns.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large start-quiz-btn">Check Eligibility & Apply</button>
+                    <p class="micro-copy">Takes 60 seconds • Strict QA process</p>
+                </div>
+            </div>
+            <div class="social-proof">
+                <p>Trusted by elite scaling operators</p>
+                <!-- Faux logos for aesthetics -->
+                <div class="logos">
+                    <div class="faux-logo">O2<span>Media</span></div>
+                    <div class="faux-logo">Nexus<span>Perf</span></div>
+                    <div class="faux-logo">Verve<span>Ads</span></div>
+                    <div class="faux-logo">Yield<span>Max</span></div>
                 </div>
             </div>
         </section>
-        
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-value">404</div>
-                <div class="metric-label">Errors Resolved</div>
+
+        <!-- Quiz View -->
+        <section id="view-quiz" class="view">
+            <div class="quiz-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="quiz-header">
+                    <button id="btn-back" class="btn-icon hidden">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <span class="step-indicator">Step <span id="currentStepNum">1</span> of 7</span>
+                </div>
+
+                <div id="questions-container" class="questions-wrapper">
+                    <!-- Q1 -->
+                    <div class="question-slide active" data-step="1">
+                        <h2>What is your monthly ad spend range?</h2>
+                        <p class="question-desc">Helps us match you with the right publisher volume.</p>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="under_10k">
+                                <span>Under $10,000</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="10k_50k">
+                                <span>$10k - $50k</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="50k_250k">
+                                <span>$50k - $250k</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="250k_plus">
+                                <span>$250k+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="question-slide" data-step="2">
+                        <h2>Primary traffic sources you currently buy?</h2>
+                        <p class="question-desc">Select the channel you have the most success with.</p>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="traffic" value="native">
+                                <span>Native Ads</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="traffic" value="push_pop">
+                                <span>Push / Pop</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="traffic" value="social">
+                                <span>Social (FB, TikTok)</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="traffic" value="search">
+                                <span>Search (Google, Bing)</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="traffic" value="display">
+                                <span>Display / Programmatic</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="question-slide" data-step="3">
+                        <h2>Preferred buying model?</h2>
+                        <p class="question-desc">How do you prefer to pay for your traffic?</p>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="model" value="cpm_cpc">
+                                <span>CPM / CPC</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="model" value="cpa_cpl">
+                                <span>CPA / CPL</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="model" value="revshare">
+                                <span>RevShare</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="question-slide" data-step="4">
+                        <h2>Primary GEO focus?</h2>
+                        <p class="question-desc">Where is the majority of your traffic targeted?</p>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="geo" value="tier1">
+                                <span>Tier 1 (US, CA, UK, AU)</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="geo" value="europe">
+                                <span>Europe (Non-T1)</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="geo" value="latam">
+                                <span>LATAM</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="geo" value="apac">
+                                <span>APAC</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="geo" value="global">
+                                <span>Global / Broad</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="question-slide" data-step="5">
+                        <h2>How would you describe your experience level?</h2>
+                        <div class="options-list">
+                            <label class="option-card row-card">
+                                <input type="radio" name="experience" value="beginner">
+                                <div class="card-content">
+                                    <span class="card-title">Just starting out</span>
+                                    <span class="card-desc">Still finding my first winning campaigns.</span>
+                                </div>
+                            </label>
+                            <label class="option-card row-card">
+                                <input type="radio" name="experience" value="intermediate">
+                                <div class="card-content">
+                                    <span class="card-title">Consistent & Profitable</span>
+                                    <span class="card-desc">Running steady campaigns, looking for new sources.</span>
+                                </div>
+                            </label>
+                            <label class="option-card row-card">
+                                <input type="radio" name="experience" value="advanced">
+                                <div class="card-content">
+                                    <span class="card-title">Scaling Aggressively</span>
+                                    <span class="card-desc">Ready to deploy significant capital out of the gate.</span>
+                                </div>
+                            </label>
+                            <label class="option-card row-card">
+                                <input type="radio" name="experience" value="agency">
+                                <div class="card-content">
+                                    <span class="card-title">Agency / Media Buying Team</span>
+                                    <span class="card-desc">Managing multiple accounts and large client budgets.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="question-slide" data-step="6">
+                        <h2>What is your biggest bottleneck right now?</h2>
+                        <div class="options-list">
+                            <label class="option-card row-card">
+                                <input type="radio" name="bottleneck" value="quality">
+                                <div class="card-content">
+                                    <span class="card-title">Traffic Quality & Consistency</span>
+                                    <span class="card-desc">Too much bot traffic or wildly fluctuating
+                                        conversions.</span>
+                                </div>
+                            </label>
+                            <label class="option-card row-card">
+                                <input type="radio" name="bottleneck" value="volume">
+                                <div class="card-content">
+                                    <span class="card-title">Volume Caps</span>
+                                    <span class="card-desc">My current networks can't handle my scaling needs.</span>
+                                </div>
+                            </label>
+                            <label class="option-card row-card">
+                                <input type="radio" name="bottleneck" value="roi">
+                                <div class="card-content">
+                                    <span class="card-title">ROI & Margins</span>
+                                    <span class="card-desc">Traffic is too expensive to maintain profitability.</span>
+                                </div>
+                            </label>
+                            <label class="option-card row-card">
+                                <input type="radio" name="bottleneck" value="compliance">
+                                <div class="card-content">
+                                    <span class="card-title">Compliance & Bans</span>
+                                    <span class="card-desc">Struggling with strict ad policies on major
+                                        platforms.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q7: Lead Capture -->
+                    <div class="question-slide" data-step="7">
+                        <h2>Nearly there. Where should we send your results?</h2>
+                        <p class="question-desc">We'll generate your personalized traffic blueprint.</p>
+                        <form id="lead-form" class="lead-capture-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Work Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@company.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="submit-lead-btn">Analyze
+                                Profile</button>
+                            <p class="privacy-note">Your data is secure. We don't share with third parties.</p>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="metric-card">
-                <div class="metric-value" id="msCounter">12ms</div>
-                <div class="metric-label">Edge Latency</div>
+        </section>
+
+        <!-- Analyzing View -->
+        <section id="view-analyzing" class="view">
+            <div class="analyzing-container">
+                <div class="spinner"></div>
+                <h2>Analyzing your profile...</h2>
+                <ul class="analysis-steps">
+                    <li class="step">Evaluating traffic needs...</li>
+                    <li class="step">Matching with publisher inventory...</li>
+                    <li class="step">Generating traffic blueprint...</li>
+                </ul>
             </div>
-            <div class="metric-card">
-                <div class="metric-value">100%</div>
-                <div class="metric-label">System Uptime</div>
+        </section>
+
+        <!-- Results View: Qualified -->
+        <section id="view-result-qualified" class="view">
+            <div class="result-container">
+                <div class="archetype-badge">Profile Identified</div>
+                <h2 class="result-title" id="res-archetype-title">The Scaling Operator</h2>
+                <p class="result-desc" id="res-archetype-desc">Based on your spend and goals, you need clean,
+                    high-volume inventory that converts reliably.</p>
+
+                <div class="recommendation-box">
+                    <h3>Recommended Formats for You</h3>
+                    <ul id="res-formats-list">
+                        <li>Premium Native Ads (Tier 1)</li>
+                        <li>High-Intent Push Notifications</li>
+                    </ul>
+                </div>
+
+                <div class="action-box">
+                    <p>Your profile is a strong match for the Vrume private network.</p>
+                    <button class="btn btn-primary btn-large glow-btn" id="final-apply-btn">Complete
+                        Application</button>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Results View: Unqualified -->
+        <section id="view-result-rejected" class="view">
+            <div class="result-container text-center">
+                <div class="icon-box">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h2 class="result-title">Not a perfect fit right now</h2>
+                <p class="result-desc">Currently, our private network is optimized for advertisers spending $10k+/month
+                    and scaling established funnels. We've added you to our early-stage buyer waitlist and will reach
+                    out when we open our self-serve platform.</p>
+
+                <button class="btn btn-secondary mt-4" onclick="location.reload()">Return Home</button>
+            </div>
+        </section>
+
     </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>
