@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ads UX | Development Sandbox</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    <main class="container">
+        <header>
+            <div class="logo-badge">SYSTEM_ONLINE</div>
+        </header>
+        <section class="hero">
+            <h1 class="glitch-text" data-text="Ads UX">Ads UX</h1>
+            <h2 class="subtitle">Development Environment</h2>
+            <p class="description">
+                The designated workspace for prototyping, component development, and UX experiments.
+                <br>Currently running flawlessly on Vercel.
+            </p>
+            <div class="action-buttons">
+                <button class="primary-btn" id="exploreBtn">
+                    <span>Initialize Workspace</span>
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <div class="status-indicator">
+                    <div class="pulse"></div>
+                    <span>Deployment Active</span>
+                </div>
+            </div>
+        </section>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">404</div>
+                <div class="metric-label">Errors Resolved</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="msCounter">12ms</div>
+                <div class="metric-label">Edge Latency</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">System Uptime</div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
