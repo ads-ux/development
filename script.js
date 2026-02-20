@@ -1,185 +1,126 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- State Management ---
-    const state = {
-        answers: {},
-        currentStep: 1,
-        totalSteps: 7
-    };
 
-    // --- DOM Elements ---
-    const views = {
-        home: document.getElementById('view-home'),
-        quiz: document.getElementById('view-quiz'),
-        analyzing: document.getElementById('view-analyzing'),
-        qualified: document.getElementById('view-result-qualified'),
-        rejected: document.getElementById('view-result-rejected')
-    };
-
-    const startBtns = document.querySelectorAll('.start-quiz-btn');
-    const backBtn = document.getElementById('btn-back');
-    const progressBar = document.getElementById('progressBar');
-    const stepNumDisplay = document.getElementById('currentStepNum');
-    const slides = document.querySelectorAll('.question-slide');
-    const leadForm = document.getElementById('lead-form');
-
-    // --- View Navigation ---
-    function showView(viewId) {
-        Object.values(views).forEach(v => {
-            if (v) v.classList.remove('active');
-        });
-        document.getElementById(viewId).classList.add('active');
-    }
-
-    startBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    // --- Smooth Scrolling for Anchor Links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            showView('view-quiz');
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 
-    // --- Quiz Logic ---
-    function updateProgress() {
-        const progress = (state.currentStep / state.totalSteps) * 100;
-        progressBar.style.width = `${progress}%`;
-        stepNumDisplay.textContent = state.currentStep;
+    // --- Progressive Form Logic ---
+    const form = document.getElementById('application-form');
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const stepSuccess = document.getElementById('step-success');
 
-        if (state.currentStep > 1) {
-            backBtn.classList.remove('hidden');
-        } else {
-            backBtn.classList.add('hidden');
-        }
-    }
+    const btnNext = document.getElementById('btn-next');
+    const btnPrev = document.getElementById('btn-prev');
 
-    function showStep(step) {
-        // Hide current
-        slides.forEach(s => {
-            s.classList.remove('active', 'exit-left');
-            if (parseInt(s.dataset.step) < step) {
-                s.classList.add('exit-left');
+    const dot1 = document.getElementById('dot-1');
+    const dot2 = document.getElementById('dot-2');
+
+    // Validation function for Step 1
+    function validateStep1() {
+        const fullName = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const spend = document.getElementById('spend');
+
+        let isValid = true;
+
+        // Simple visual feedback for empty required fields
+        [fullName, email, spend].forEach(input => {
+            if (!input.value) {
+                input.style.borderColor = 'var(--danger)';
+                isValid = false;
+            } else {
+                input.style.borderColor = 'var(--border-color)';
             }
         });
 
-        // Show new
-        const targetSlide = document.querySelector(`.question-slide[data-step="${step}"]`);
-        if (targetSlide) {
-            targetSlide.classList.add('active');
-            state.currentStep = step;
-            updateProgress();
+        // Basic email format check
+        if (email.value && !/\S+@\S+\.\S+/.test(email.value)) {
+            email.style.borderColor = 'var(--danger)';
+            isValid = false;
         }
+
+        return isValid;
     }
 
-    backBtn.addEventListener('click', () => {
-        if (state.currentStep > 1) {
-            showStep(state.currentStep - 1);
-        } else {
-            showView('view-home'); // Go back to start if on step 1
+    // Next Step Action
+    btnNext.addEventListener('click', () => {
+        if (validateStep1()) {
+            step1.classList.remove('active');
+            step2.classList.add('active');
+
+            dot1.classList.remove('active');
+            dot1.style.backgroundColor = 'var(--success)';
+            dot1.style.borderColor = 'var(--success)';
+            dot1.innerHTML = '<svg viewBox="0 0 24 24" width="16" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
+            dot2.classList.add('active');
         }
     });
 
-    // Auto-advance on radio selection
-    const radioInputs = document.querySelectorAll('.question-slide input[type="radio"]');
-    radioInputs.forEach(input => {
-        input.addEventListener('change', (e) => {
-            const name = e.target.name;
-            const value = e.target.value;
-            state.answers[name] = value;
+    // Previous Step Action
+    btnPrev.addEventListener('click', () => {
+        step2.classList.remove('active');
+        step1.classList.add('active');
 
-            // Short delay to show selection state before sliding
-            setTimeout(() => {
-                if (state.currentStep < state.totalSteps) {
-                    showStep(state.currentStep + 1);
-                }
-            }, 300);
-        });
+        dot2.classList.remove('active');
+        dot1.classList.add('active');
+        dot1.style.backgroundColor = 'var(--bg-surface-elevated)';
+        dot1.style.borderColor = 'var(--border-color)';
+        dot1.innerHTML = '1';
     });
 
-    // --- Form Submission & Analysis ---
-    leadForm.addEventListener('submit', (e) => {
+    // Form Submission Action
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const nameInput = document.getElementById('name').value;
-        const emailInput = document.getElementById('email').value;
 
-        state.answers.name = nameInput;
-        state.answers.email = emailInput;
+        const btnSubmit = document.getElementById('btn-submit');
+        const originalText = btnSubmit.innerHTML;
 
-        runAnalysis();
-    });
-
-    function runAnalysis() {
-        showView('view-analyzing');
-
-        const steps = document.querySelectorAll('.analysis-steps .step');
-
-        // Mock analysis progression
-        setTimeout(() => steps[0].classList.add('done'), 800);
-        setTimeout(() => steps[1].classList.add('done'), 1800);
-        setTimeout(() => steps[2].classList.add('done'), 2800);
+        // Simulating submission delay
+        btnSubmit.innerHTML = 'Submitting...';
+        btnSubmit.disabled = true;
 
         setTimeout(() => {
-            showResults();
-        }, 3600);
-    }
+            step2.classList.remove('active');
+            stepSuccess.classList.add('active');
 
-    function showResults() {
-        const { budget, experience, bottleneck, model } = state.answers;
+            dot2.style.backgroundColor = 'var(--success)';
+            dot2.style.borderColor = 'var(--success)';
+            dot2.innerHTML = '<svg viewBox="0 0 24 24" width="16" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>';
 
-        // Soft reject criteria: Budget < 10k AND beginner experience
-        if (budget === 'under_10k' && ['beginner', 'intermediate'].includes(experience)) {
-            showView('view-result-rejected');
-            return;
-        }
+            // Optionally, you would send FormData via fetch here
+            // const formData = new FormData(form);
+            // console.log(Object.fromEntries(formData));
 
-        // --- Determine Archetype ---
-        let archetype = "The Performance Marketer";
-        let desc = "You need high-quality traffic to scale your campaigns.";
-        let formats = [];
+            // Optional: reset form after a few seconds so they can see success state
+            // setTimeout(() => form.reset(), 5000);
 
-        if (budget === '250k_plus' || budget === '50k_250k') {
-            if (bottleneck === 'volume') {
-                archetype = "The Volume Seeker";
-                desc = "You have proven funnels but are capped by network limits. Vrume unlocks massive scale on high-converting placements.";
-                formats = ["Global Push & Pop Volume", "High-Volume Native Integrations"];
-            } else {
-                archetype = "The Scaling Operator";
-                desc = "Scaling spend usually degrades ROI. Vrume maintains quality at high spend tiers through strict publisher vetting.";
-                formats = ["Premium Tier 1 Native", "Direct Publisher Placements"];
-            }
-        } else {
-            // Mid tier 10k-50k or highly experienced small budget
-            if (model === 'cpa_cpl' || model === 'revshare') {
-                archetype = "The Conversion Specialist";
-                desc = "You buy strictly on performance. We have proprietary formats designed for high-intent conversions.";
-                formats = ["High-Intent Search Formats", "Smart Bidding Display"];
-            } else {
-                archetype = "The Agile Media Buyer";
-                desc = "You test fast and scale winners. Vrume provides the clean data and rapid campaign deployment you need.";
-                formats = ["Self-Serve Native Ads", "Cost-effective Push Traffic"];
-            }
-        }
-
-        // Render Results
-        document.getElementById('res-archetype-title').textContent = archetype;
-        document.getElementById('res-archetype-desc').textContent = desc;
-
-        const formatsList = document.getElementById('res-formats-list');
-        formatsList.innerHTML = '';
-        formats.forEach(f => {
-            const li = document.createElement('li');
-            li.textContent = f;
-            formatsList.appendChild(li);
-        });
-
-        // Add standard benefit
-        const standardBenefit = document.createElement('li');
-        standardBenefit.textContent = "Dedicated Account Manager";
-        formatsList.appendChild(standardBenefit);
-
-        showView('view-result-qualified');
-    }
-
-    document.getElementById('final-apply-btn')?.addEventListener('click', function () {
-        this.innerHTML = "Application Sent ✓";
-        this.style.background = "var(--success)";
-        this.style.color = "#fff";
+        }, 1200);
     });
+
+    // Clear error styling on input
+    const inputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.style.borderColor = 'var(--border-color)';
+        });
+        input.addEventListener('change', () => {
+            input.style.borderColor = 'var(--border-color)';
+        });
+    });
+
 });
