@@ -183,123 +183,15 @@
                 <div class="form-container">
                     <div class="form-header">
                         <h2 class="section-title">Request Advertiser Access</h2>
-                        <div class="form-progress">
-                            <div class="progress-step active" id="dot-1">1</div>
-                            <div class="progress-line"></div>
-                            <div class="progress-step" id="dot-2">2</div>
-                        </div>
+                        <p style="color: var(--secondary); margin-bottom: 2rem;">Applications reviewed within 24–48
+                            hours.</p>
                     </div>
 
-                    <form id="application-form">
-
-                        <!-- Step 1 -->
-                        <div class="form-step active" id="step-1">
-                            <div class="form-group">
-                                <label for="fullName">Full Name</label>
-                                <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required placeholder="john@media-team.com">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="spend">Monthly Dating Spend</label>
-                                <div class="select-wrapper">
-                                    <select id="spend" name="spend" required>
-                                        <option value="" disabled selected>Select spend tier...</option>
-                                        <option value="under5k">Under $5k</option>
-                                        <option value="5k_25k">$5k–$25k</option>
-                                        <option value="25k_100k">$25k–$100k</option>
-                                        <option value="100k_plus">$100k+</option>
-                                    </select>
-                                    <svg class="select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <button type="button" class="btn btn-primary btn-block btn-large mt-4"
-                                id="btn-next">Continue</button>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="form-step" id="step-2">
-                            <div class="form-group">
-                                <label for="geo">Primary GEO</label>
-                                <input type="text" id="geo" name="geo" required placeholder="US, UK, CA, FR...">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="offerType">Offer Type</label>
-                                <div class="select-wrapper">
-                                    <select id="offerType" name="offerType" required>
-                                        <option value="" disabled selected>Select offer type...</option>
-                                        <option value="soi">SOI</option>
-                                        <option value="doi">DOI</option>
-                                        <option value="subscription">Subscription</option>
-                                        <option value="cam">Cam</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                    <svg class="select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="model">Preferred Buying Model</label>
-                                <div class="select-wrapper">
-                                    <select id="model" name="model" required>
-                                        <option value="" disabled selected>Select buying model...</option>
-                                        <option value="cpm">CPM</option>
-                                        <option value="cpc">CPC</option>
-                                        <option value="both">Both</option>
-                                    </select>
-                                    <svg class="select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="bottleneck">Biggest Scaling Bottleneck</label>
-                                <textarea id="bottleneck" name="bottleneck" rows="3" required
-                                    placeholder="Briefly describe what's holding you back from scaling..."></textarea>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-secondary btn-icon" id="btn-prev">
-                                    <svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M15 18l-6-6 6-6" />
-                                    </svg> Back
-                                </button>
-                                <button type="submit" class="btn btn-primary btn-large btn-flex" id="btn-submit">Submit
-                                    Application</button>
-                            </div>
-                        </div>
-
-                        <!-- Success State -->
-                        <div class="form-step success-state" id="step-success">
-                            <div class="success-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            </div>
-                            <h3>Application Received</h3>
-                            <p>Our team will review your profile and reach out shortly.</p>
-                        </div>
-
-                    </form>
-
-                    <p class="form-footer-note">Applications reviewed within 24–48 hours.</p>
+                    <!-- HubSpot Form Embed -->
+                    <script src="https://js-na2.hsforms.net/forms/embed/243026444.js" defer></script>
+                    <div class="hs-form-frame" data-region="na2" data-form-id="0023cb02-42ba-4ccc-aff3-3a8bdc6c2177"
+                        data-portal-id="243026444"></div>
                 </div>
-            </div>
         </section>
 
         <!-- 6. FOOTER -->
