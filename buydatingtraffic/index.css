@@ -194,6 +194,7 @@ h4 {
     font-size: 1.35rem;
     font-weight: 800;
     letter-spacing: -1px;
+    display: block;
 }
 
 .logo .dot {
