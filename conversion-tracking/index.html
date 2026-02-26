@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrume | Conversion Tracking API & S2S Postback Setup</title>
+    <meta name="description"
+        content="Learn how to set up the Vrume Conversion Tracking API with S2S postbacks, dynamic tokens, and revenue tracking for accurate optimization.">
+    <link rel="stylesheet" href="/conversion-tracking/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">VRUME<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="/partners">Partners</a>
+                <a href="/case-studies">Case Studies</a>
+                <a href="/buydatingtraffic">Buy Traffic</a>
+                <a href="mailto:partners@vrume.com" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero container animate">
+            <div class="hero-badge">Technical Documentation</div>
+            <h1>Conversion Tracking API<br>& S2S Postback Setup</h1>
+            <p>The Vrume Conversion Tracking API enables advertisers to track conversions, monitor performance, and
+                optimize campaigns using dynamic tokens and server-to-server (S2S) postbacks. Proper tracking ensures
+                accurate reporting, clean attribution, and scalable growth.</p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- DYNAMIC TRACKING TOKENS                    -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section container">
+            <div class="text-center animate">
+                <div class="hero-badge">Dynamic Parameters</div>
+                <h2 class="section-heading">Supported Dynamic Tracking Tokens</h2>
+                <p class="section-subheading">Our tracking system supports advanced parameters that allow granular
+                    optimization at the campaign, placement, and device level.</p>
+            </div>
+
+            <div class="token-grid">
+
+                <!-- Campaign & Placement -->
+                <div class="token-category animate">
+                    <h3 class="category-title">Campaign & Placement Identifiers</h3>
+                    <div class="token-table">
+                        <div class="token-row">
+                            <code class="token-code">{campaign_id}</code>
+                            <span class="token-desc">Campaign ID</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{zone_id}</code>
+                            <span class="token-desc">Placement / Zone ID</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{variation_id}</code>
+                            <span class="token-desc">Creative variation</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{site_id}</code>
+                            <span class="token-desc">Publisher site ID</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{category_id}</code>
+                            <span class="token-desc">Traffic category</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{tags}</code>
+                            <span class="token-desc">Placement tags</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{sub}</code>
+                            <span class="token-desc">Sub ID parameter</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{keyword}</code>
+                            <span class="token-desc">Targeted keyword</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost & Revenue -->
+                <div class="token-category animate">
+                    <h3 class="category-title">Cost & Revenue Data</h3>
+                    <div class="token-table">
+                        <div class="token-row">
+                            <code class="token-code">{cost}</code>
+                            <span class="token-desc">Click cost</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{actual_cost}</code>
+                            <span class="token-desc">Final billed cost</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{currency}</code>
+                            <span class="token-desc">Currency type</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{pricing_model}</code>
+                            <span class="token-desc">CPC / CPM model</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{conversions_tracking}</code>
+                            <span class="token-desc">Unique conversion ID</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User & Device -->
+                <div class="token-category animate">
+                    <h3 class="category-title">User & Device Targeting</h3>
+                    <div class="token-table">
+                        <div class="token-row">
+                            <code class="token-code">{country}</code>
+                            <span class="token-desc">User country</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{language}</code>
+                            <span class="token-desc">Browser language</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{user_agent}</code>
+                            <span class="token-desc">Device / browser string</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{format}</code>
+                            <span class="token-desc">Ad format</span>
+                        </div>
+                        <div class="token-row">
+                            <code class="token-code">{email_encoded}</code>
+                            <span class="token-desc">Encoded email</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pro-tip animate">
+                <div class="pro-tip-icon">💡</div>
+                <div class="pro-tip-content">
+                    <strong>Pro Tip:</strong> For most advertisers, optimizing by <code>{zone_id}</code> provides the
+                    fastest path to scalable performance.
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- S2S POSTBACK SETUP                         -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section" style="background: var(--bg-surface);">
+            <div class="container">
+                <div class="text-center animate">
+                    <div class="hero-badge">Integration Guide</div>
+                    <h2 class="section-heading">How Server-to-Server Tracking Works</h2>
+                    <p class="section-subheading">Server-to-server tracking eliminates browser-based tracking issues by
+                        sending conversion data directly between servers. This increases reliability, improves
+                        attribution accuracy, and reduces data loss caused by ad blockers or browser restrictions.</p>
+                </div>
+
+                <div class="steps-container">
+
+                    <div class="setup-step animate">
+                        <div class="step-marker">
+                            <span class="step-num">1</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Create a Conversion Goal in the Dashboard</h3>
+                            <p>Log in to your advertiser panel and configure your conversion goals:</p>
+                            <a href="https://admin.vrumeads.com/panel/advertiser/conversions" target="_blank"
+                                rel="noopener" class="btn btn-inline">Configure Conversion Goals →</a>
+                        </div>
+                    </div>
+
+                    <div class="setup-step animate">
+                        <div class="step-marker">
+                            <span class="step-num">2</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Append the Tracking Token to Your Landing Page</h3>
+                            <p>When a user clicks your ad, a unique tracking ID is generated and passed to your page.
+                            </p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Landing Page URL</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>https://yourdomain.com/?tracker={conversions_tracking}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-step animate">
+                        <div class="step-marker">
+                            <span class="step-num">3</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Store the Unique Conversion ID</h3>
+                            <p>Save the token in a session variable, cookie, or database so it can be used when the
+                                conversion occurs.</p>
+                        </div>
+                    </div>
+
+                    <div class="setup-step animate">
+                        <div class="step-marker">
+                            <span class="step-num">4</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Send the Postback Request</h3>
+                            <p>Fire the postback URL when a conversion event occurs on your server:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>S2S Postback URL</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>https://YOUR_TRACKING_DOMAIN/tag.php?goal=GOAL_ID&tag={conversions_tracking}&value={conversion_value}</code></pre>
+                            </div>
+                            <p style="margin-top: 1.25rem;">For dynamic CPA campaigns, append:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Dynamic CPA Parameter</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>&CPA={CPA_value}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- BENEFITS                                   -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section container">
+            <div class="text-center animate">
+                <div class="hero-badge">Why It Matters</div>
+                <h2 class="section-heading">Benefits of Accurate Conversion Attribution</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item animate">
+                    <div class="benefit-icon">📊</div>
+                    <h4>More Reliable Reporting</h4>
+                    <p>Eliminate discrepancies between your tracker and the ad platform with direct server
+                        communication.</p>
+                </div>
+                <div class="benefit-item animate">
+                    <div class="benefit-icon">💰</div>
+                    <h4>Improved ROI Calculations</h4>
+                    <p>Know exactly what you're spending and earning per zone, campaign, and creative variation.</p>
+                </div>
+                <div class="benefit-item animate">
+                    <div class="benefit-icon">⚡</div>
+                    <h4>Faster Optimization Decisions</h4>
+                    <p>Real-time postback data means you can cut losers and scale winners the same day you launch.</p>
+                </div>
+                <div class="benefit-item animate">
+                    <div class="benefit-icon">🔗</div>
+                    <h4>Reduced Data Discrepancies</h4>
+                    <p>S2S tracking bypasses ad blockers and browser restrictions that kill pixel-based attribution.</p>
+                </div>
+                <div class="benefit-item animate">
+                    <div class="benefit-icon">📈</div>
+                    <h4>Stronger Long-Term Scaling</h4>
+                    <p>Clean data compounds. Better attribution today means smarter scaling decisions tomorrow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- RELATED PAGES                              -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section class="section" style="background: var(--bg-surface);">
+            <div class="container">
+                <div class="text-center animate">
+                    <h2 class="section-heading">Related Resources</h2>
+                </div>
+                <div class="related-grid">
+                    <a href="https://www.vrume.com/advertiser-dashboard/" target="_blank" rel="noopener"
+                        class="related-card animate">
+                        <h4>Advertiser Dashboard Overview</h4>
+                        <span class="related-arrow">→</span>
+                    </a>
+                    <a href="https://www.vrume.com/traffic-formats/" target="_blank" rel="noopener"
+                        class="related-card animate">
+                        <h4>Traffic Formats</h4>
+                        <span class="related-arrow">→</span>
+                    </a>
+                    <a href="https://www.vrume.com/advertising-guidelines/" target="_blank" rel="noopener"
+                        class="related-card animate">
+                        <h4>Advertising Guidelines</h4>
+                        <span class="related-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section container">
+            <div class="cta-box animate">
+                <div class="hero-badge">Need Help?</div>
+                <h2>Questions About Tracking Setup?</h2>
+                <p>Our team can help you configure postbacks, verify token passing, and troubleshoot attribution issues.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://t.me/Vrumeads" target="_blank" class="btn btn-primary btn-large">Message on
+                        Telegram</a>
+                    <a href="mailto:partners@vrume.com" class="btn btn-secondary btn-large">Email Support</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">VRUME<span class="dot">.</span></div>
+                <div class="nav-links" style="display: flex;">
+                    <a href="/">Home</a>
+                    <a href="/case-studies">Case Studies</a>
+                    <a href="/buydatingtraffic">Buy Traffic</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Vrume. Private Performance Network. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copy button functionality
+        function copyCode(btn) {
+            const code = btn.closest('.code-block').querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
