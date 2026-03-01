@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Vrume</title>
+    <meta name="description"
+        content="Get in touch with the Vrume team. Apply to buy high-intent dating and adult traffic, or inquire about our exclusive network.">
+    <meta name="keywords" content="contact vrume, media buying, traffic network contact, buy dating traffic">
+    <meta property="og:title" content="Contact Us | Vrume">
+    <meta property="og:description" content="Get in touch with the Vrume team.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vrume.app/contact/">
+    <link rel="stylesheet" href="/contact/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '879455425464348');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=879455425464348&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V0KBWG26W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+
+        gtag("config", "G-7V0KBWG26W");
+    </script>
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">VRUME<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="/#why">Why Vrume</a>
+                <a href="/buytraffic">Buy Traffic</a>
+                <a href="/selltraffic">Sell Traffic</a>
+                <a href="/case-studies">Case Studies</a>
+                <a href="https://vrume.app/partners/">Partners</a>
+                <a href="/contact">Contact</a>
+                <a href="/#cta" class="btn btn-secondary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container animate">
+            <div class="case-tag" style="margin-bottom: 2rem;">Get in Touch</div>
+            <h1>Contact Us</h1>
+            <p style="max-width: 600px; margin: 0 auto;">Ready to scale? Fill out the form below to inquire about our
+                inventory, submit a publisher application, or speak to our team directly.</p>
+        </div>
+    </header>
+
+    <section class="contact-section animate">
+        <div class="container">
+            <div class="form-container">
+                <!-- HubSpot Form Embed -->
+                <script src="https://js-na2.hsforms.net/forms/embed/243026444.js" defer></script>
+                <div class="hs-form-frame" data-region="na2" data-form-id="e749b9e3-d01a-4884-8fe2-2fc4b251eb80"
+                    data-portal-id="243026444"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">VRUME<span class="dot">.</span></div>
+                <div class="nav-links" style="display: flex;">
+                    <a href="/case-studies">Case Studies</a>
+                    <a href="/buytraffic">Buy Traffic</a>
+                    <a href="/selltraffic">Sell Traffic</a>
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/ccpa">CCPA</a>
+                    <a href="/gdpr">GDPR</a>
+                    <a href="/contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Vrume. Private Performance Network. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
