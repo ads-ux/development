@@ -38,7 +38,7 @@ const getTemplate = (title, metaDescription, bodyContent, slug) => `<!DOCTYPE ht
     <meta property="og:title" content="${title} | Vrume Case Studies">
     <meta property="og:description" content="${metaDescription}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://vrume.app/case-studies/${slug}/">
+    <meta property="og:url" content="https://vrume.com/case-studies/${slug}/">
     <link rel="stylesheet" href="/case-studies/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
