@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Vrume</title>
+    <link rel="canonical" href="https://vrume.com/404.html">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vrume.com/404.html">
+    <meta property="og:title" content="404 - Page Not Found | Vrume">
+    <meta property="og:description" content="The page you're looking for doesn't exist. Let's get you back on track.">
+    <meta property="og:image" content="https://vrume.com/og-image.png">
+    <meta property="og:site_name" content="Vrume">
+
+    <link rel="stylesheet" href="/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V0KBWG26W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-7V0KBWG26W");
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer
+        src="//js-na2.hs-scripts.com/243026444.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <style>
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 800;
+            background: linear-gradient(to bottom, #ffffff, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            max-width: 500px;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">VRUME<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="/#why">Why Vrume</a>
+                <a href="/buytraffic">Buy Traffic</a>
+                <a href="/selltraffic">Sell Traffic</a>
+                <a href="/case-studies">Case Studies</a>
+                <a href="/partners/">Partners</a>
+                <a href="https://admin.vrumeads.com/login" class="btn btn-secondary">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container error-container animate">
+            <div class="error-code">404</div>
+            <h1>Page Not Found</h1>
+            <p class="error-message">The page you were looking for doesn't exist or has been moved to a new destination.
+            </p>
+
+            <div style="display: flex; gap: 1.5rem;">
+                <a href="/" class="btn btn-primary btn-large">Back to Home</a>
+                <a href="/contact" class="btn btn-secondary btn-large">Contact Support</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+                <div class="logo">VRUME<span class="dot">.</span></div>
+                <div class="nav-links" style="display: flex; gap: 2rem;">
+                    <a href="/">Home</a>
+                    <a href="/case-studies">Case Studies</a>
+                    <a href="/buytraffic">Buy Traffic</a>
+                    <a href="/selltraffic">Sell Traffic</a>
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/ccpa">CCPA</a>
+                    <a href="/gdpr">GDPR</a>
+                </div>
+            </div>
+            <div class="footer-bottom"
+                style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--secondary);">
+                &copy; 2026 Vrume. Private Performance Network. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
