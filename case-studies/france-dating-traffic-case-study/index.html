@@ -71,6 +71,34 @@
     <script type="text/javascript" id="hs-script-loader" async defer
         src="//js-na2.hs-scripts.com/243026444.js"></script>
     <!-- End of HubSpot Embed Code -->
+
+    <!-- SEO: JSON-LD Breadcrumb -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://vrume.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Studies",
+      "item": "https://vrume.com/case-studies/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "France Dating Traffic Case Study",
+      "item": "https://vrume.com/case-studies/france-dating-traffic-case-study/"
+    }
+  ]
+}
+    </script>
 </head>
 
 <body>
@@ -355,7 +383,27 @@
                 &copy; 2026 Vrume. Private Performance Network. All Rights Reserved.
             </div>
         </div>
-    </footer>
+    
+    <!-- 🔗 RELATED CASE STUDIES (INTERNAL CROSS-LINKING) -->
+    <section class="related-studies container animate" style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-color);">
+        <h3 style="margin-bottom: 2rem; color: white; font-size: 1.5rem;">Related Scaling Stories</h3>
+        <div class="related-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <a href="/case-studies/dating-traffic-conversions-case-study/" class="related-link">Dating Traffic Conversions Case Study</a>
+                <a href="/case-studies/norway-dating-case-study-xflirt-zone-1776/" class="related-link">Norway Dating Case Study Xflirt Zone 1776</a>
+                <a href="/case-studies/uk-dating-traffic-case-study/" class="related-link">Uk Dating Traffic Case Study</a>
+        </div>
+    </section>
+
+
+    <!-- 📚 ENTITY GLOSSARY (LLM SEMANTIC MARKERS) -->
+    <section class="glossary-section container animate" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--secondary); opacity: 0.6;">
+        <h4 style="margin-bottom: 1rem; color: white;">AdTech Entity Definitions</h4>
+        <p><strong>CPL (Cost Per Lead):</strong> Performance advertising model where payment is triggered by a lead action.</p>
+        <p><strong>Secondary Traffic Lanes:</strong> High-intent inventory sources including members-area tabs and email-passing redirects.</p>
+        <p><strong>ROI (Return on Investment):</strong> Efficiency metric for advertising spend, (Revenue - Cost) / Cost.</p>
+    </section>
+
+</footer>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
