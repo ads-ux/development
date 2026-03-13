@@ -1,0 +1,27 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const navContent = document.querySelector('.nav-content');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navContent && navLinks && !document.querySelector('.mobile-menu-toggle')) {
+        const hamburger = document.createElement('button');
+        hamburger.className = 'mobile-menu-toggle';
+        hamburger.setAttribute('aria-label', 'Toggle Navigation');
+        hamburger.innerHTML = '<span></span><span></span><span></span>';
+        
+        navContent.appendChild(hamburger);
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});
