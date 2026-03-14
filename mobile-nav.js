@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initMobileNav() {
     const navContent = document.querySelector('.nav-content');
     const navLinks = document.querySelector('.nav-links');
 
@@ -24,4 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileNav);
+} else {
+    initMobileNav();
+}
