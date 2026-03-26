@@ -23,18 +23,12 @@
 <meta content="Scale your affiliate and direct campaigns with Vrume's premium traffic sources. Access high-converting inventory across Dating, Nutra, iGaming, and more." name="description"/>
 <meta content="buy traffic, media buying, performance marketing, cpm traffic, cpc traffic, openrtb traffic, affiliate marketing, dating traffic, sweepstakes traffic" name="keywords"/>
 <meta content="Access high-converting CPC and CPM traffic sources across top verticals. Apply for advertiser access today." property="og:description"/>
-<link href="/buytraffic/index.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="/buytraffic/index.css" rel="stylesheet"/></noscript>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
+<link href="/buytraffic/index.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <!-- Tracking is consolidated via Google Tag Manager to comply with ad policies -->
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TCFH7J109N"></script>
-<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
 
-      gtag("config", "G-TCFH7J109N");
-    </script>
+
 <!-- SEO & LLM Automated Schema -->
 <script type="application/ld+json">
 {
@@ -509,5 +503,22 @@
 </footer>
 </main>
 <script defer="" src="/mobile-nav.js"></script>
-</body>
+<script>
+let gtmLoaded = false;
+function loadGTM() {
+    if (gtmLoaded) return;
+    gtmLoaded = true;
+    const script = document.createElement('script');
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-TCFH7J109N";
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TCFH7J109N');    
+    ['scroll', 'mousemove', 'touchstart', 'click'].forEach(e => window.removeEventListener(e, loadGTM));
+}
+['scroll', 'mousemove', 'touchstart', 'click'].forEach(e => window.addEventListener(e, loadGTM, {passive: true}));
+// Also load after 5 seconds just in case of no interaction
+setTimeout(loadGTM, 5000);
+</script></body>
 </html>

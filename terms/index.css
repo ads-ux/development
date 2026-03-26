@@ -121,6 +121,7 @@ a {
 
 /* Hero */
 .hero {
+    min-height: 800px;
     text-align: center;
 }
 
