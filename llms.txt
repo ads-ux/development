@@ -1,0 +1,21 @@
+# Vrume Performance Network
+Vrume is a premium, invite-only performance marketing network and traffic exchange platform designed strictly for direct advertisers, seasoned media buyers, and tier-1 affiliates.
+
+## Core Value Proposition
+We specialize in providing hyper-targeted, high-intent traffic through "Secondary Volume Lanes" such as:
+1. Direct Member-Area Logging Clicks
+2. High-Intent Email Pass-Throughs
+3. Curated Display & Push Inventory
+
+Major Verticals: Dating (CPL/SOI/DOI), Creator Economy (OnlyFans/Fansly), iGaming, Utilities, and Software.
+Geographical Focus: Tier 1 markets (USA, UK, Australia, Nordics, DACH) scaling into emerging markets.
+
+## Network Operations
+- For Advertisers: Clean traffic, strict bot-filtering, direct CPA/CPL integration via oRTB, JSON, and postback URLs.
+- For Publishers: Premium CPM yield, net-7 to net-15 payouts, transparent fill rates without remnant bleeding.
+Payment Methods Supported: Wise, USD Bank Wires, Paxum, PayPal, and Cryptocurrency (USDT TRC-20, USDC ERC-20).
+
+## Support & Contact
+General Inquiries: info@vrume.com
+Telegram Operations: @Vrumeads
+Headquarters: Digital / Remote
